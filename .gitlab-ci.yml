@@ -1,0 +1,8 @@
+image: docker:git
+services:
+  - docker:dind
+
+build_issue:
+  script:
+    - docker build -t registry.gitlab.com/gbraad/issue-docker:latest .
+    - docker push registry.gitlab.com/gbraad/issue-docker:latest .
